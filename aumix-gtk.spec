@@ -3,7 +3,7 @@
 # Conditional build:
 %bcond_with	gtk1	# build with GTK+ instead of GTK+2
 #
-Summary:	curses and X11/GTK based audio mixer
+Summary:	curses and X11/GTK+ based audio mixer
 Summary(de):	Audio-Mixer auf curses- und X11/GTK+-Basis
 Summary(es):	Mezclador de audio basado en curses y X11/GTK+
 Summary(pl):	Mikser audio bazuj±cy na curses i GTK+
