@@ -1,0 +1,238 @@
+diff -Nur aumix-1.27.4-orig/doc/aumix.1 aumix-1.27.4/doc/aumix.1
+--- aumix-1.27.4-orig/doc/aumix.1	Wed Nov 24 13:51:36 1999
++++ aumix-1.27.4/doc/aumix.1	Sat Nov 27 18:59:03 1999
+@@ -115,11 +115,11 @@
+ .Nm
+ go into interactive mode after doing things non-interactively.
+ .It Fl L
+-load settings from $HOME/.aumixrc, or /etc/aumixrc if the former is inaccessible
++load settings from $HOME/etc/aumixrc, $HOME/.aumixrc, or /etc/aumixrc if the former are inaccessible
+ .It Fl q
+ query all devices and print their settings
+ .It Fl S
+-save settings to $HOME/.aumixrc
++save settings to $HOME/etc/aumixrc
+ .El
+ 
+ .Sh EXAMPLE
+@@ -173,7 +173,7 @@
+ .It Em K No or Em k
+ show a description of the functions of keys
+ .It Em L No or Em l
+-load settings from $HOME/.aumixrc, falling back to /etc/aumixrc
++load settings from $HOME/.aumixrc or $HOME/etc/aumixrc, falling back to /etc/aumixrc
+ .It Em M No or Em m
+ mute or unmute
+ .It Em O No or Em o
+@@ -254,7 +254,7 @@
+ .Ev HOME
+ variable is used.
+ .Sh FILES
+-Saved settings for the mixer are kept in the /etc/aumixrc and $HOME/.aumixrc files, but can be kept anywhere if specified explicitly.  Color schemes are normally kept in the directory given by DATADIRNAME at compilation time, but are preferentially loaded from the current directory and can be kept anywhere so long as the path to them is specified.  The format of these files is:
++Saved settings for the mixer are kept in the /etc/aumixrc and $HOME/etc/aumixrc files ($HOME/.aumixrc is now obsolete, but still works), but can be kept anywhere if specified explicitly.  Color schemes are normally kept in the directory given by DATADIRNAME at compilation time, but are preferentially loaded from the current directory and can be kept anywhere so long as the path to them is specified.  The format of these files is:
+ 
+ 	item foreground background
+  
+diff -Nur aumix-1.27.4-orig/po/aumix.pot aumix-1.27.4/po/aumix.pot
+--- aumix-1.27.4-orig/po/aumix.pot	Wed Nov 24 13:52:05 1999
++++ aumix-1.27.4/po/aumix.pot	Sat Nov 27 19:07:58 1999
+@@ -75,7 +75,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+Binary files aumix-1.27.4-orig/po/de.gmo and aumix-1.27.4/po/de.gmo differ
+diff -Nur aumix-1.27.4-orig/po/de.po aumix-1.27.4/po/de.po
+--- aumix-1.27.4-orig/po/de.po	Sat Nov 13 11:02:53 1999
++++ aumix-1.27.4/po/de.po	Sat Nov 27 19:00:43 1999
+@@ -81,7 +81,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -99,7 +99,7 @@
+ "Weitere Optionen:\n"
+ "  d:  Anderes Ger‰t als /dev/mixer benutzen\n"
+ "  f:  spezifizieren Sie Datei f¸r Einsparung- und Ladeneinstellungen\n"
+-"      (R¸ckstellungen zum ~ /.aumixrc or /etc/aumixrc)\n"
++"      (R¸ckstellungen zum ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  h:  Diese n¸tzlichen Informationen\n"
+ 
+ #: src/common.c:567
+Binary files aumix-1.27.4-orig/po/es.gmo and aumix-1.27.4/po/es.gmo differ
+diff -Nur aumix-1.27.4-orig/po/es.po aumix-1.27.4/po/es.po
+--- aumix-1.27.4-orig/po/es.po	Sat Nov 13 11:02:53 1999
++++ aumix-1.27.4/po/es.po	Sat Nov 27 19:01:09 1999
+@@ -81,7 +81,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -99,7 +99,7 @@
+ "Otras opciones:\n"
+ "  d:  ajustar dispositivos adem·s de /dev/mixer\n"
+ "  f:  indicar el fichero para guardar y cargar las preferencias (por\n"
+-"      defecto es ~/.aumixrc o /etc/aumixrc\n"
++"      defecto es ~/etc/aumixrc, ~/.aumixrc o /etc/aumixrc\n"
+ "  C:  indicar el esquema de color\n"
+ "  h:  este mensaje de ayuda\n"
+ 
+Binary files aumix-1.27.4-orig/po/gl.gmo and aumix-1.27.4/po/gl.gmo differ
+diff -Nur aumix-1.27.4-orig/po/gl.po aumix-1.27.4/po/gl.po
+--- aumix-1.27.4-orig/po/gl.po	Sat Nov 13 11:02:53 1999
++++ aumix-1.27.4/po/gl.po	Sat Nov 27 19:07:46 1999
+@@ -89,7 +89,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -107,7 +107,7 @@
+ "outras opciÛns:\n"
+ "  d:  axustar outro dispositivo que non sexa /dev/mixer\n"
+ "  f:  especificar ficheiro para gardar e cargar par·metros (por omisiÛn È\n"
+-"      ~/.aumixrc ou /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc ou /etc/aumixrc)\n"
+ "  C:  especifica-lo esquema de cor\n"
+ "  h:  amosar esta mensaxe de axuda\n"
+ 
+Binary files aumix-1.27.4-orig/po/pl.gmo and aumix-1.27.4/po/pl.gmo differ
+diff -Nur aumix-1.27.4-orig/po/pl.po aumix-1.27.4/po/pl.po
+--- aumix-1.27.4-orig/po/pl.po	Sat Nov 13 11:02:53 1999
++++ aumix-1.27.4/po/pl.po	Sat Nov 27 19:00:09 1999
+@@ -81,7 +81,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -99,7 +99,7 @@
+ "inne opcje:\n"
+ "  d:  dostosowuje urz±dzenie inne niø /dev/mixer\n"
+ "  f:  okre∂la plik do zapisywania i ≥adowania ustawieÒ (domy∂lnie jest to\n"
+-"      ~ /.aumixrc lub /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc lub /etc/aumixrc)\n"
+ "  C:  okre∂la plik zawieraj±cy schemat uøycia kolorÛw\n"
+ "  h:  ta pomocna informacja\n"
+ 
+Binary files aumix-1.27.4-orig/po/pt_BR.gmo and aumix-1.27.4/po/pt_BR.gmo differ
+diff -Nur aumix-1.27.4-orig/po/pt_BR.po aumix-1.27.4/po/pt_BR.po
+--- aumix-1.27.4-orig/po/pt_BR.po	Sat Nov 13 11:02:54 1999
++++ aumix-1.27.4/po/pt_BR.po	Sat Nov 27 19:01:53 1999
+@@ -84,7 +84,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -102,7 +102,7 @@
+ "outras opÁıes:\n"
+ "  d:  usar outro dispositivo que n„o o /dev/mixer\n"
+ "  f:  SPECIFY FILE FOR SAVING AND LOADING SETTINGS (DEFAULTS TO\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  SPECIFY COLOR SCHEME\n"
+ "  h:  esta mensagem de ajuda\n"
+ 
+Binary files aumix-1.27.4-orig/po/ru.gmo and aumix-1.27.4/po/ru.gmo differ
+diff -Nur aumix-1.27.4-orig/po/ru.po aumix-1.27.4/po/ru.po
+--- aumix-1.27.4-orig/po/ru.po	Sat Nov 13 11:02:54 1999
++++ aumix-1.27.4/po/ru.po	Sat Nov 27 19:02:27 1999
+@@ -82,7 +82,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -101,7 +101,7 @@
+ "‰“’«…≈ œ–√……:\n"
+ "  d:  “≈«’Ã…“œ◊¡‘ÿ ’”‘“œ ”‘◊¡ À“œÕ≈ /dev/mixer … /dev/sound/mixer\n"
+ "  f:  ’À¡⁄¡Œ…≈ …Õ≈Œ… ∆¡ Ã¡ ƒÃ— »“¡Œ≈Œ…— ’”‘¡Œœ◊œÀ (–œ ’ÕœÃﬁ¡Œ…¿\n"
+-"      ~ /.aumixrc …Ã… /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc …Ã… /etc/aumixrc)\n"
+ "  C:  SPECIFY COLOR SCHEME\n"
+ "  h:  ‹‘¡ –œÕœ›ÿ\n"
+ 
+Binary files aumix-1.27.4-orig/po/uk.gmo and aumix-1.27.4/po/uk.gmo differ
+diff -Nur aumix-1.27.4-orig/po/uk.po aumix-1.27.4/po/uk.po
+--- aumix-1.27.4-orig/po/uk.po	Sat Nov 20 07:59:46 1999
++++ aumix-1.27.4/po/uk.po	Sat Nov 27 19:05:46 1999
+@@ -82,7 +82,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -101,7 +101,7 @@
+ "∂Œ€¶ œ–√¶ß:\n"
+ "  d:  “≈«’Ã¿◊¡‘… –“…”‘“œß œÀ“¶Õ /dev/mixer\n"
+ "  f:  ◊À¡⁄¡ŒŒ— ¶Õ≈Œ¶ ∆¡ Ã’ ƒÃ— ⁄¬≈“¶«¡ŒŒ— “¶◊Œ¶◊ (⁄¡ ⁄¡Õœ◊ﬁ¡ŒŒ—Õ\n"
+-"      ~ /.aumixrc ﬁ… /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc ﬁ… /etc/aumixrc)\n"
+ "  C:  SPECIFY COLOR SCHEME\n"
+ "  h:  √— ƒœ–œÕœ«¡\n"
+ 
+diff -Nur aumix-1.27.4-orig/src/common.c aumix-1.27.4/src/common.c
+--- aumix-1.27.4-orig/src/common.c	Wed Nov 24 13:51:36 1999
++++ aumix-1.27.4/src/common.c	Sat Nov 27 18:55:57 1999
+@@ -430,7 +430,8 @@
+ {
+ /* Open the settings file for reading or writing.
+ 
+-   Try first ${HOME}/.AUMIXRC, then AUMIXRC_PATH/AUMIXRC;
++   Try first ${HOME}/.AUMIXRC, ${HOME}/etc/AUMIXRC,
++   then AUMIXRC_PATH/AUMIXRC;
+    become an error generator if neither can be opened.
+ 
+    Input:
+@@ -447,8 +448,12 @@
+ 	char            filename[FILENAME_MAX];
+ 	if (save_filename == NULL) {
+ 		home = getenv("HOME");
+-		sprintf(filename, "%s/.%s", home, AUMIXRC);
+-		setfile = fopen(filename, mode);
++		sprintf(filename, "%s/etc/%s", home, AUMIXRC);
++                setfile = fopen(filename, mode);
++                if (setfile == NULL) {
++                        sprintf(filename, "%s/.%s", home, AUMIXRC);
++                        setfile = fopen(filename, mode);
++                }
+ 		if (setfile == NULL) {
+ 			sprintf(filename, "%s/%s", AUMIXRC_PATH, AUMIXRC);
+ 			setfile = fopen(filename, mode);
+@@ -549,7 +554,7 @@
+ other options:\n\
+   d:  adjust a device besides /dev/mixer\n\
+   f:  specify file for saving and loading settings (defaults to\n\
+-      ~ /.aumixrc or /etc/aumixrc)\n\
++      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n\
+   C:  specify color scheme\n\
+   h:  this helpful message\n"));
+ #ifdef HAVE_LIBNCURSES
