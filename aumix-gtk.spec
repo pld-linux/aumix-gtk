@@ -11,6 +11,7 @@ Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
+Patch1:		aumix-xaumix.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
 BuildRequires:	automake
 BuildRequires:	gtk+-devel
@@ -45,6 +46,7 @@ poziom sygna³u wyj¶ciowego.
 %prep
 %setup -q -n aumix-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 automake
@@ -61,7 +63,7 @@ export CFLAGS LDFLAGS
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia \
-	$RPM_BUILD_ROOT%{_bindir},%{_datadir}/pixmaps} \
+	$RPM_BUILD_ROOT{%{_bindir},%{_datadir}/pixmaps} \
 	$RPM_BUILD_ROOT/etc/rc.d/init.d
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
