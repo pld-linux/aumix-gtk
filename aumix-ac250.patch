@@ -1,0 +1,62 @@
+--- aumix-2.7/configure.in.wiget	Fri Jul  6 14:25:46 2001
++++ aumix-2.7/configure.in	Fri Jul  6 14:40:38 2001
+@@ -60,42 +60,44 @@
+     if test $cursdflt = on; then
+       AC_DEFINE(HAVE_USEDEFAULT)
+     fi
+-    AC_CACHE_CHECK(for private member _use_keypad in WINDOW,
+-      aumix_cv_struct_window_usekeypad,
++    AC_CACHE_CHECK([for private member _use_keypad in WINDOW],
++      [aumix_cv_struct_window_usekeypad],
+       [AC_TRY_COMPILE([#ifdef HAVE_NCURSES_H
+ #include <ncurses.h>
+ #else
+ #include <curses.h>
+-#endif], [WINDOW w; w._use_keypad;],
+-      aumix_cv_struct_window_usekeypad=yes, aumix_cv_struct_window_usekeypad=no)])
++#endif
++], [WINDOW w; w._use_keypad;],
++      [aumix_cv_struct_window_usekeypad=yes],[ aumix_cv_struct_window_usekeypad=no)]])
+     if test $aumix_cv_struct_window_usekeypad = yes; then
+       AC_DEFINE(HAVE_USEKEYPAD)
+     fi
+   fi
+-  AC_ARG_WITH(gpm,
+-    [  --without-gpm                Compile only without GPM support],
+-    AC_MSG_RESULT([Compiling without GPM support]),
++
++)
++  AC_ARG_WITH(gpm,[  --without-gpm                Compile only without GPM support],[
++    AC_MSG_RESULT([Compiling without GPM support])],[
+     dnl Checks for GPM library.
+     AC_CHECK_LIB(gpm, Gpm_Repeat)
+-  )
+-  AC_ARG_WITH(sysmouse,
+-    [  --without-sysmouse           Compile only without sysmouse support],
+-    AC_MSG_RESULT([Compiling without sysmouse support]),
++  ])
++  AC_ARG_WITH(sysmouse,[  --without-sysmouse           Compile only without sysmouse support],[
++    AC_MSG_RESULT([Compiling without sysmouse support])],
+     dnl Checks for sysmouse availability.
+-    AC_CACHE_CHECK(for CONS_MOUSECTL in machine/console.h,
+-      aumix_cv_cons_mousectl,
++    AC_CACHE_CHECK([for CONS_MOUSECTL in machine/console.h],
++      [aumix_cv_cons_mousectl],
+       [AC_EGREP_CPP([A mouse is a mouse is a mouse],
+       [#ifdef HAVE_MACHINE_CONSOLE_H
+ #include <machine/console.h>
+ #ifdef CONS_MOUSECTL
+ A mouse is a mouse is a mouse
+ #endif
+-#endif], aumix_cv_cons_mousectl=yes, aumix_cv_cons_mousectl=no)])
++#endif
++],[ aumix_cv_cons_mousectl=yes],[ aumix_cv_cons_mousectl=no])])
+     if test $aumix_cv_cons_mousectl = yes; then
+       AC_DEFINE(HAVE_SYSMOUSE)
+     fi
+   )
+-)
++
+ AM_CONDITIONAL(CURSES, test "x$CURSLIB" != "x")
+ AC_SUBST(CURSLIB)
+ 
