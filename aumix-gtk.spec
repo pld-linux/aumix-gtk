@@ -76,8 +76,6 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
 
 touch $RPM_BUILD_ROOT%{_sysconfdir}/aumixrc
 
-gzip -9nf AUTHORS BUGS ChangeLog NEWS README TODO
-
 %find_lang aumix
 
 %clean
@@ -85,8 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f aumix.lang
 %defattr(644,root,root,755)
+%doc AUTHORS BUGS ChangeLog NEWS README TODO
 %config(noreplace,missingok) %verify(not size mtime md5) %{_sysconfdir}/aumixrc
-%doc *.gz
 
 %attr(755,root,root) %{_bindir}/aumix
 
