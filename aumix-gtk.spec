@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/aumix
 
-%{_datadir}/pixmaps/*.xpm
+%{_pixmapsdir}/*.xpm
 %{_applnkdir}/Multimedia/aumix.desktop
 
 %{_datadir}/aumix
