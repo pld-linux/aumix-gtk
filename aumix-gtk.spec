@@ -9,7 +9,7 @@ Summary(ru):	Аудио микшер на базе библиотеки curses и gtk+
 Summary(uk):	Ауд╕о м╕кшер, базований на б╕блиотец╕ curses ╕ gtk+
 Name:		aumix-gtk
 Version:	2.8
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.bz2
