@@ -8,6 +8,6 @@ Exec=aumix
 Icon=aumix.png
 Terminal=false
 Type=Application
-Categories=Mixer;
+Categories=GTK;Audio;Mixer;
 Encoding=UTF-8
 # vi: encoding=utf-8
