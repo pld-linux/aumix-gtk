@@ -12,6 +12,7 @@ Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
+BuildRequires:	automake
 BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	gpm-devel
@@ -46,6 +47,7 @@ poziom sygna³u wyj¶ciowego.
 %patch0 -p1
 
 %build
+automake
 autoconf
 gettextize --copy --force
 
@@ -74,12 +76,12 @@ touch $RPM_BUILD_ROOT%{_sysconfdir}/aumixrc
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS BUGS ChangeLog NEWS README 
 
-%find_lang %{name}
+%find_lang aumix
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files -f aumix.lang
 %defattr(644,root,root,755)
 %config(noreplace,missingok) %{_sysconfdir}/aumixrc
 %doc {AUTHORS,BUGS,ChangeLog,NEWS,README}.gz
