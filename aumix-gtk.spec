@@ -3,8 +3,8 @@ Summary:	curses and X11/Gtk ased audio mixer
 Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
 Summary(pl):	Mikser audio bazuj±cy na curses
 Name:		aumix-gtk
-Version:	2.6.1
-Release:	3
+Version:	2.7
+Release:	1
 License:	GPL
 Group:		Applications/Sound
 Group(pl):	Aplikacje/D¼wiêk
