@@ -1,0 +1,13 @@
+diff -urN aumix-2.6.orig/src/xaumix aumix-2.6/src/xaumix
+--- aumix-2.6.orig/src/xaumix	Wed Apr 12 17:02:04 2000
++++ aumix-2.6/src/xaumix	Sat Apr 15 15:38:01 2000
+@@ -28,6 +28,9 @@
+ # 	GnomeUI-WARNING **: Could not open help topics file NULL
+ 		if test -x $dir/gnome-terminal; then
+ 			GEOMETRY='--geometry 79x${LINES}'
++# Gnome-terminal tries to parse '-C' as it's own option. And fails.
++# Fortunatelly aumix can work without '-C ansi'.
++			SCHEME=""
+ 			NAME="--name=aumix"
+ 			TITLE="-t aumix"
+ 			XTERM="$dir/gnome-terminal --name aumix"
