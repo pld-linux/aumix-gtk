@@ -62,7 +62,7 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia \
 	$RPM_BUILD_ROOT%{_bindir},%{_datadir}/pixmaps} \
 	$RPM_BUILD_ROOT/etc/rc.d/init.d
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_datadir}/aumix/*xpm \
 $RPM_BUILD_ROOT%{_datadir}/pixmaps
