@@ -51,10 +51,11 @@ poziom sygna³u wyj¶ciowego.
 %patch1 -p1
 
 %build
+rm -rf missing
+gettextize --copy --force
 aclocal
 autoconf
 automake -a -c
-gettextize --copy --force
 
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure
@@ -84,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f aumix.lang
 %defattr(644,root,root,755)
 %config(noreplace,missingok) %verify(not size mtime md5) %{_sysconfdir}/aumixrc
-%doc {AUTHORS,BUGS,ChangeLog,NEWS,README,TODO}.gz
+%doc *.gz
 
 %attr(755,root,root) %{_bindir}/aumix
 
