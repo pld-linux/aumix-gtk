@@ -26,7 +26,6 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Conflicts:	aumix
 Obsoletes:	aumix
 
 %description
