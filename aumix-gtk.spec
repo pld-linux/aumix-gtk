@@ -12,7 +12,6 @@ Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
-BuildRequires:	XFree86-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	gpm-devel
