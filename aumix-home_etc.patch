@@ -115,12 +115,12 @@ diff -Nru aumix-2.6.1/po/gl.po aumix-2.6.1.new/po/gl.po
  "  h:  this helpful message\n"
  msgstr ""
  "  d:  axustar outro dispositivo que non sexa /dev/mixer\n"
- "  f:  especificar ficheiro para gardar e cargar parАmetros (por omisiСn И\n"
+ "  f:  especificar ficheiro para gardar e cargar opciСns (por omisiСn И\n"
 -"      ~/.aumixrc ou /etc/aumixrc)\n"
 +"      $CONFIG_DIR/aumixrc ou /etc/aumixrc)\n"
  "  h:  amosar esta mensaxe de axuda\n"
  
- #: src/common.c:689
+ #: src/common.c:707
 diff -Nru aumix-2.6.1/po/pl.po aumix-2.6.1.new/po/pl.po
 --- aumix-2.6.1/po/pl.po	Tue Jun 27 23:11:47 2000
 +++ aumix-2.6.1.new/po/pl.po	Tue Jun 27 23:16:16 2000
@@ -150,13 +150,13 @@ diff -Nru aumix-2.6.1/po/pt_BR.po aumix-2.6.1.new/po/pt_BR.po
 +"      $CONFIG_DIR/aumixrc or /etc/aumixrc)\n"
  "  h:  this helpful message\n"
  msgstr ""
- "  d:  usar outro dispositivo que nЦo o /dev/mixer\n"
- "  f:  SPECIFY FILE FOR SAVING AND LOADING SETTINGS (DEFAULTS TO\n"
--"      ~/.aumixrc or /etc/aumixrc)\n"
+ "  d:  ajusta um dispositivo em /dev/mixer\n"
+ "  f:  especifica um arquivo para ler e gravar as configuraГУes (o padrЦo И   "
+-"    ~/.aumixrc or /etc/aumixrc)\n"
 +"      $CONFIG_DIR/aumixrc or /etc/aumixrc)\n"
- "  h:  esta mensagem de ajuda\n"
+ "  h:  essa mensagem de ajuda\n"
  
- #: src/common.c:689
+ #: src/common.c:707
 diff -Nru aumix-2.6.1/po/ru.po aumix-2.6.1.new/po/ru.po
 --- aumix-2.6.1/po/ru.po	Tue Jun 27 23:11:47 2000
 +++ aumix-2.6.1.new/po/ru.po	Tue Jun 27 23:16:07 2000
@@ -187,12 +187,12 @@ diff -Nru aumix-2.6.1/po/uk.po aumix-2.6.1.new/po/uk.po
  "  h:  this helpful message\n"
  msgstr ""
  "  d:  регулювати пристро╖ окр╕м /dev/mixer\n"
- "  f:  вказання ╕мен╕ файлу для збер╕гання р╕вн╕в (за замовчанням\n"
+ "  f:  вказати ╕м'я файлу для збереження р╕вн╕в (за замовчанням\n"
 -"      ~/.aumixrc чи /etc/aumixrc)\n"
 +"      $CONFIG_DIR/aumixrc чи /etc/aumixrc)\n"
  "  h:  ця допомога\n"
  
- #: src/common.c:689
+ #: src/common.c:707
 diff -Nru aumix-2.6.1/src/Makefile.am aumix-2.6.1.new/src/Makefile.am
 --- aumix-2.6.1/src/Makefile.am	Tue Jun 27 23:11:47 2000
 +++ aumix-2.6.1.new/src/Makefile.am	Wed Jun 28 00:12:13 2000
@@ -243,12 +243,12 @@ diff -Nru aumix-2.6.1/src/common.c aumix-2.6.1.new/src/common.c
 @@ -571,6 +573,8 @@
  	FILE           *setfile;
  	char           *home;
- 	char            filename[FILENAME_MAX];
+ 	char            filename[PATH_MAX];
 +	struct cfv	etcfile;
 +
  	if (save_filename == NULL) {
  		home = getenv("HOME");
- 		if ((strlen(home) + strlen(AUMIXRC)) < PATH_MAX) {
+ 		if ((strlen(home) + strlen(AUMIXRC) + 2) < PATH_MAX) {
 @@ -585,6 +589,19 @@
  		}
  		if (setfile == NULL) {
@@ -268,7 +268,7 @@ diff -Nru aumix-2.6.1/src/common.c aumix-2.6.1.new/src/common.c
 +			setfile = fopen(filename, mode);
  		}
  	} else
- 		setfile = fopen(save_filename, mode);
+ 		setfile = CheckAndOpen(save_filename, mode);
 diff -Nru aumix-2.6.1/src/userdir.c aumix-2.6.1.new/src/userdir.c
 --- aumix-2.6.1/src/userdir.c	Thu Jan  1 01:00:00 1970
 +++ aumix-2.6.1.new/src/userdir.c	Tue Jun 27 23:11:28 2000
