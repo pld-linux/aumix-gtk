@@ -26,6 +26,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Conflicts:	aumix
 Obsoletes:	aumix
 
 %description
@@ -71,7 +72,9 @@ poziom sygna³u wyj¶ciowego.
 %patch2 -p1
 
 %build
+#rm -f missing acinclude.m4
 rm -f missing
+#%%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
