@@ -85,13 +85,13 @@ CPPFLAGS="-I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}} \
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia/aumix.desktop
+install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}/aumix.desktop
 install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 rm -f $RPM_BUILD_ROOT%{_datadir}/aumix/aumix.xpm
 
@@ -112,4 +112,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/aumix
 
 %{_pixmapsdir}/*.png
-%{_applnkdir}/Multimedia/aumix.desktop
+%{_desktopdir}/aumix.desktop
