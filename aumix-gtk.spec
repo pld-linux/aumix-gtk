@@ -8,6 +8,7 @@ Release:	5
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
+# Source0-md5: 84ecc331bf6d86d3ac925590fee83af7
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
 Patch1:		aumix-xaumix.patch
