@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=aumix
-Comment=Mixer audio
+Name=Aumix
+Comment=Audio Mixer
 Comment[pl]=Mikser dźwięku
 Exec=aumix
 Icon=aumix.xpm
