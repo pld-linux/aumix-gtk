@@ -1,6 +1,8 @@
 # NOTE:		Please keep in sync with aumix.
-%bcond_with	gtk1		# build with gtk1 instead of gtk2
-
+#
+# Conditional build:
+%bcond_with	gtk1	# build with gtk1 instead of gtk2
+#
 Summary:	curses and X11/Gtk based audio mixer
 Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
 Summary(es):	Mezclador de audio basado en curses y X11/gtk+
@@ -27,12 +29,12 @@ BuildRequires:	gpm-devel
 %if %{with gtk1}
 BuildRequires:	gtk+-devel >= 1.2.0
 %else
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 %endif
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	aumix
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This program provides a tty- and X11/Gtk-based, interactive method of
@@ -72,16 +74,15 @@ poziom sygna³u wyj¶ciowego.
 
 %prep
 %setup -q -n aumix-%{version}
-#%patch0 -p1
+%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 
 %build
-#rm -f missing acinclude.m4
-rm -f missing
 #%%{__gettextize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 
 CPPFLAGS="-I/usr/include/ncurses"
