@@ -1,12 +1,3 @@
-Only in aumix-2.8.orig: ABOUT-NLS
-Only in aumix-2.8.orig: acconfig.h
-Only in aumix-2.8.orig: acinclude.m4
-Only in aumix-2.8.orig: aclocal.m4
-Only in aumix-2.8.orig: AUTHORS
-Only in aumix-2.8.orig: BUGS
-Only in aumix-2.8.orig: ChangeLog
-Only in aumix-2.8.orig: config.h.in
-Only in aumix-2.8.orig: configure
 diff -ur aumix-2.8.orig/configure.in aumix-2.8/configure.in
 --- aumix-2.8.orig/configure.in	2002-11-25 02:04:16.000000000 +0100
 +++ aumix-2.8/configure.in	2004-07-12 19:29:45.135190696 +0200
@@ -70,21 +61,3 @@ diff -ur aumix-2.8.orig/configure.in aumix-2.8/configure.in
  AM_CONDITIONAL(CURSES, test "x$CURSLIB" != "x")
  AC_SUBST(CURSLIB)
  
-Only in aumix-2.8.orig: COPYING
-Only in aumix-2.8.orig: CVS
-Only in aumix-2.8.orig: data
-Only in aumix-2.8.orig: doc
-Only in aumix-2.8.orig: INSTALL
-Only in aumix-2.8.orig: install-sh
-Only in aumix-2.8.orig: intl
-Only in aumix-2.8.orig: Makefile.am
-Only in aumix-2.8.orig: Makefile.in
-Only in aumix-2.8.orig: missing
-Only in aumix-2.8.orig: mkinstalldirs
-Only in aumix-2.8.orig: NEWS
-Only in aumix-2.8.orig: packaging
-Only in aumix-2.8.orig: po
-Only in aumix-2.8.orig: README
-Only in aumix-2.8.orig: src
-Only in aumix-2.8.orig: stamp-h.in
-Only in aumix-2.8.orig: TODO
