@@ -29,7 +29,7 @@ BuildRequires:	gpm-devel
 %if %{with gtk1}
 BuildRequires:	gtk+-devel >= 1.2.0
 %else
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 %endif
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
