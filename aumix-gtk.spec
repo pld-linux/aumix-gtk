@@ -4,7 +4,7 @@ Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
 Summary(pl):	Mikser audio bazuj±cy na curses i Gtk+
 Name:		aumix-gtk
 Version:	2.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
@@ -13,6 +13,7 @@ Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
 Patch1:		aumix-xaumix.patch
+Patch2:		aumix-ac250.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -49,15 +50,16 @@ poziom sygna³u wyj¶ciowego.
 %setup -q -n aumix-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
-rm -rf missing
+rm -rf missing acinclude.m4
 gettextize --copy --force
 aclocal
 autoconf
 automake -a -c
 
-CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+CPPFLAGS="-I/usr/include/ncurses" \
 %configure
 
 %{__make}
@@ -65,7 +67,7 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}} \
-	$RPM_BUILD_ROOT{%{_bindir},/etc/rc.d/init.d}
+	$RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir}}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
