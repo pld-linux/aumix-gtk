@@ -54,8 +54,8 @@ poziom sygna³u wyj¶ciowego.
 rm -rf missing acinclude.m4
 gettextize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 
 CPPFLAGS="-I/usr/include/ncurses" \
 %configure
