@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=aumix
+Comment=Mixer audio
+Comment[pl]=Mikser d¼wiêku
+Exec=aumix
+Icon=aumix.xpm
+MiniIcon=aumix-mini.xpm
+Terminal=0
+Type=Application
