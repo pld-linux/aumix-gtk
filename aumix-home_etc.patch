@@ -103,12 +103,8 @@
     become an error generator if neither can be opened.
  
     Input:
-@@ -548,22 +550,34 @@
-    Success:   pointer to the default settings file structure
-    Failure:   NULL
-  */
--	FILE           *setfile;
-+	FILE           *setfile = NULL;
+@@ -545,19 +547,31 @@
+	FILE           *setfile;
  	char           *home;
  	char            filename[FILENAME_MAX];
 +	struct cfv     etcfile;
