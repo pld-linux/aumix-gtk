@@ -24,8 +24,6 @@ Provides:	aumix
 Obsoletes:	aumix
 Conflicts:	aumix
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 This program provides a tty- and X11/Gtk-based, interactive method of
