@@ -7,8 +7,6 @@ Version:	2.7
 Release:	3
 License:	GPL
 Group:		Applications/Sound
-Group(de):	Applikationen/Laut
-Group(pl):	Aplikacje/D¼wiêk
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 Source2:	aumix.desktop
 Patch0:		aumix-home_etc.patch
