@@ -6,12 +6,12 @@ Summary(pl):	Mikser audio bazuj±cy na curses i Gtk+
 Summary(ru):	áÕÄÉÏ ÍÉËÛÅÒ ÎÁ ÂÁÚÅ ÂÉÂÌÉÏÔÅËÉ curses É gtk+
 Summary(uk):	áÕÄ¦Ï Í¦ËÛÅÒ, ÂÁÚÏ×ÁÎÉÊ ÎÁ Â¦ÂÌÉÏÔÅÃ¦ curses ¦ gtk+
 Name:		aumix-gtk
-Version:	2.7
-Release:	16
+Version:	2.8
+Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
-# Source0-md5: 84ecc331bf6d86d3ac925590fee83af7
+Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.bz2
+# Source0-md5:	dc3fc7209752207c23e7c94ab886b340
 Source3:	%{name}.desktop
 Source4:	aumix.png
 Patch0:		aumix-home_etc.patch
@@ -22,7 +22,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gpm-devel
-BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gtk+2-devel
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -66,9 +66,9 @@ poziom sygna³u wyj¶ciowego.
 
 %prep
 %setup -q -n aumix-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+#%patch0 -p1
+#%patch1 -p1
+#%patch2 -p1
 
 %build
 #rm -f missing acinclude.m4
