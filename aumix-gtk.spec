@@ -16,15 +16,14 @@ Patch2:		aumix-ac250.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
+BuildRequires:	gpm-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	gpm-devel
-BuildRequires:	gettext-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	aumix
-Obsoletes:	aumix
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Conflicts:	aumix
-
+Obsoletes:	aumix
 
 %description
 This program provides a tty- and X11/Gtk-based, interactive method of
@@ -67,7 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir}}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/aumix/*xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
