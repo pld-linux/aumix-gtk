@@ -112,28 +112,6 @@ diff -Nur aumix-1.27.4-orig/po/gl.po aumix-1.27.4/po/gl.po
  "  h:  amosar esta mensaxe de axuda\n"
  
 Binary files aumix-1.27.4-orig/po/pl.gmo and aumix-1.27.4/po/pl.gmo differ
-diff -Nur aumix-1.27.4-orig/po/pl.po aumix-1.27.4/po/pl.po
---- aumix-1.27.4-orig/po/pl.po	Sat Nov 13 11:02:53 1999
-+++ aumix-1.27.4/po/pl.po	Sat Nov 27 19:00:09 1999
-@@ -81,7 +81,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -99,7 +99,7 @@
- "inne opcje:\n"
- "  d:  dostosowuje urz╠dzenie inne ni© /dev/mixer\n"
- "  f:  okre╤la plik do zapisywania i Ёadowania ustawieЯ (domy╤lnie jest to\n"
--"      ~ /.aumixrc lub /etc/aumixrc)\n"
-+"      ~/etc/aumixrc, ~/.aumixrc lub /etc/aumixrc)\n"
- "  C:  okre╤la plik zawieraj╠cy schemat u©ycia kolorСw\n"
- "  h:  ta pomocna informacja\n"
- 
-Binary files aumix-1.27.4-orig/po/pt_BR.gmo and aumix-1.27.4/po/pt_BR.gmo differ
 diff -Nur aumix-1.27.4-orig/po/pt_BR.po aumix-1.27.4/po/pt_BR.po
 --- aumix-1.27.4-orig/po/pt_BR.po	Sat Nov 13 11:02:54 1999
 +++ aumix-1.27.4/po/pt_BR.po	Sat Nov 27 19:01:53 1999
@@ -156,28 +134,6 @@ diff -Nur aumix-1.27.4-orig/po/pt_BR.po aumix-1.27.4/po/pt_BR.po
  "  h:  esta mensagem de ajuda\n"
  
 Binary files aumix-1.27.4-orig/po/ru.gmo and aumix-1.27.4/po/ru.gmo differ
-diff -Nur aumix-1.27.4-orig/po/ru.po aumix-1.27.4/po/ru.po
---- aumix-1.27.4-orig/po/ru.po	Sat Nov 13 11:02:54 1999
-+++ aumix-1.27.4/po/ru.po	Sat Nov 27 19:02:27 1999
-@@ -82,7 +82,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -101,7 +101,7 @@
- "Другие опции:\n"
- "  d:  регулировать устройства кроме /dev/mixer и /dev/sound/mixer\n"
- "  f:  указание имени файла для хранения установок (по умолчанию\n"
--"      ~ /.aumixrc или /etc/aumixrc)\n"
-+"      ~/etc/aumixrc, ~/.aumixrc или /etc/aumixrc)\n"
- "  C:  SPECIFY COLOR SCHEME\n"
- "  h:  эта помощь\n"
- 
-Binary files aumix-1.27.4-orig/po/uk.gmo and aumix-1.27.4/po/uk.gmo differ
 diff -Nur aumix-1.27.4-orig/po/uk.po aumix-1.27.4/po/uk.po
 --- aumix-1.27.4-orig/po/uk.po	Sat Nov 20 07:59:46 1999
 +++ aumix-1.27.4/po/uk.po	Sat Nov 27 19:05:46 1999
@@ -236,3 +192,45 @@ diff -Nur aumix-1.27.4-orig/src/common.c aumix-1.27.4/src/common.c
    C:  specify color scheme\n\
    h:  this helpful message\n"));
  #ifdef HAVE_LIBNCURSES
+diff -urN aumix-2.old/po/pl.po aumix-2/po/pl.po
+--- aumix-2.old/po/pl.po	Mon Dec 20 02:13:11 1999
++++ aumix-2/po/pl.po	Mon Jan 17 02:22:19 2000
+@@ -181,7 +181,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~/.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -199,7 +199,7 @@
+ "inne opcje:\n"
+ "  d:  dostosowuje urz╠dzenie inne ni© /dev/mixer\n"
+ "  f:  okre╤la plik do zapisywania i Ёadowania ustawieЯ (domy╤lnie jest to\n"
+-"      ~/.aumixrc lub /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~/.aumixrc lub /etc/aumixrc)\n"
+ "  C:  okre╤la plik zawieraj╠cy schemat u©ycia kolorСw\n"
+ "  h:  ta pomocna informacja\n"
+ 
+diff -urN aumix-2.old/po/ru.po aumix-2/po/ru.po
+--- aumix-2.old/po/ru.po	Mon Dec 20 02:13:11 1999
++++ aumix-2/po/ru.po	Mon Jan 17 02:23:12 2000
+@@ -188,7 +188,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -207,7 +207,7 @@
+ "Другие опции:\n"
+ "  d:  регулировать устройства кроме /dev/mixer\n"
+ "  f:  указание имени файла для хранения установок (по умолчанию\n"
+-"      ~ /.aumixrc или /etc/aumixrc)\n"
++"      ~/etc/aumixrc, ~ /.aumixrc или /etc/aumixrc)\n"
+ "  C:  выбор цветовой схемы\n"
+ "  h:  эта помощь\n"
+ 
