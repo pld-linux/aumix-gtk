@@ -53,7 +53,7 @@ poziom sygna³u wyj¶ciowego.
 
 %build
 rm -rf missing acinclude.m4
-gettextize --copy --force
+%{__gettextize}
 aclocal
 %{__autoconf}
 %{__automake}
