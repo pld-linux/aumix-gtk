@@ -7,7 +7,7 @@ Summary(ru):	áÕÄÉÏ ÍÉËÛÅÒ ÎÁ ÂÁÚÅ ÂÉÂÌÉÏÔÅËÉ curses É gtk+
 Summary(uk):	áÕÄ¦Ï Í¦ËÛÅÒ, ÂÁÚÏ×ÁÎÉÊ ÎÁ Â¦ÂÌÉÏÔÅÃ¦ curses ¦ gtk+
 Name:		aumix-gtk
 Version:	2.7
-Release:	13
+Release:	14
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
@@ -26,7 +26,6 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Conflicts:	aumix
 Obsoletes:	aumix
 
 %description
@@ -72,9 +71,7 @@ poziom sygna³u wyj¶ciowego.
 %patch2 -p1
 
 %build
-#rm -f missing acinclude.m4
 rm -f missing
-#%%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
