@@ -1,4 +1,6 @@
 # NOTE:		Please keep in sync with aumix.
+%bcond_with	gtk1		# build with gtk1 instead of gtk2
+
 Summary:	curses and X11/Gtk based audio mixer
 Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
 Summary(es):	Mezclador de audio basado en curses y X11/gtk+
@@ -7,7 +9,7 @@ Summary(ru):	áÕÄÉÏ ÍÉËÛÅÒ ÎÁ ÂÁÚÅ ÂÉÂÌÉÏÔÅËÉ curses É gtk+
 Summary(uk):	áÕÄ¦Ï Í¦ËÛÅÒ, ÂÁÚÏ×ÁÎÉÊ ÎÁ Â¦ÂÌÉÏÔÅÃ¦ curses ¦ gtk+
 Name:		aumix-gtk
 Version:	2.8
-Release:	1
+Release:	0.1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.bz2
@@ -22,7 +24,11 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gpm-devel
+%if %{with gtk1}
+BuildRequires:	gtk+-devel >= 1.2.0
+%else
 BuildRequires:	gtk+2-devel
+%endif
 BuildRequires:	ncurses-devel >= 5.0
 Provides:	aumix
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -67,7 +73,7 @@ poziom sygna³u wyj¶ciowego.
 %prep
 %setup -q -n aumix-%{version}
 #%patch0 -p1
-#%patch1 -p1
+%patch1 -p1
 %patch2 -p1
 
 %build
@@ -80,7 +86,11 @@ rm -f missing
 
 CPPFLAGS="-I/usr/include/ncurses"
 %configure \
+%if %{with gtk1}
+	--without-gtk
+%else
 	--without-gtk1
+%endif
 
 %{__make}
 
