@@ -1,15 +1,19 @@
 # NOTE:		Please keep in sync with aumix.
-Summary:	curses and X11/Gtk ased audio mixer
+Summary:	curses and X11/Gtk based audio mixer
 Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
+Summary(es):	Mezclador de audio basado en curses y X11/gtk+
 Summary(pl):	Mikser audio bazuj±cy na curses i Gtk+
+Summary(ru):	áÕÄÉÏ ÍÉËÛÅÒ ÎÁ ÂÁÚÅ ÂÉÂÌÉÏÔÅËÉ curses É gtk+
+Summary(uk):	áÕÄ¦Ï Í¦ËÛÅÒ, ÂÁÚÏ×ÁÎÉÊ ÎÁ Â¦ÂÌÉÏÔÅÃ¦ curses ¦ gtk+
 Name:		aumix-gtk
 Version:	2.7
-Release:	6
+Release:	13
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
 # Source0-md5: 84ecc331bf6d86d3ac925590fee83af7
-Source2:	aumix.desktop
+Source3:	%{name}.desktop
+Source4:	aumix.png
 Patch0:		aumix-home_etc.patch
 Patch1:		aumix-xaumix.patch
 Patch2:		aumix-ac250.patch
@@ -37,11 +41,29 @@ X11/Gtk-Basis zur Steuerung eines Soundkarten-Mixers. Sie können damit
 die Eingangspegel der CD, des Mikrophons und von Synthesizer-Karten
 sowie auch die Ausgabelautstärke regeln.
 
+%description -l es
+Este programa nos ofrece un método interactivo basado en tty y
+X11/gtk+de control de mezclas de tarjetas de sonido. Deja que se
+ajuste los niveles de entrada del CD, micrófono, y sintetizadores, así
+como el volumen de salida.
+
 %description -l pl
 Ten program przynosi bazuj±c± na tty oraz X11/Gtk, interaktywn± metodê
 kontrolowania miksera karty d¼wiêkowej. aumix pozwala zmieniaæ poziom
 sygna³u nadchodz±cego z CD, mikrofonu i syntetyzerów tak samo jak
 poziom sygna³u wyj¶ciowego.
+
+%description -l ru
+üÔÁ ÐÒÏÇÒÁÍÍÁ - ËÏÎÓÏÌØÎÙÊ É X11/gtk+, ÉÎÔÅÒÁËÔÉ×ÎÙÊ ÒÅÇÕÌÑÔÏÒ ÕÒÏ×ÎÅÊ
+ÍÉËÛÅÒÁ Ú×ÕËÏ×ÏÊ ËÁÒÔÙ. ïÎÁ ÐÏÚ×ÏÌÑÅÔ ÉÚÍÅÎÑÔØ ËÁË ×ÈÏÄÎÙÅ ÕÒÏ×ÎÉ
+ÓÉÇÎÁÌÏ× Ó CD, ÍÉËÒÏÆÏÎÁ, ÓÉÎÔÅÚÁÔÏÒÏ× ÎÁ Ú×ÕËÏ×ÏÊ ÐÌÁÔÅ, ÔÁË É
+×ÙÈÏÄÎÏÊ ÕÒÏ×ÅÎØ.
+
+%description -l uk
+ãÑ ÐÒÏÇÒÁÍÁ - ËÏÎÓÏÌØÎÉÊ ¦ X11/gtk+, ¦ÎÔÅÒÁËÔÉ×ÎÉÊ ÒÅÇÕÌÑÔÏÒ Ò¦×ÎÅÊ
+Í¦ËÛÅÒÕ Ú×ÕËÏ×Ï§ ËÁÒÔËÉ. ÷ÏÎÁ ÄÏÚ×ÏÌÑ¤ ÚÍ¦ÎÀ×ÁÔÉ ÑË ×È¦ÄÎ¦ Ò¦×Î¦
+ÓÉÇÎÁÌ¦× Ú CD, Í¦ËÒÏÆÏÎÕ, ÓÉÎÔÅÚÁÔÏÒ¦× ÎÁ Ú×ÕËÏ×¦Ê ÐÌÁÔ¦, ÔÁË ¦
+×ÉÈ¦ÄÎÉÊ Ò¦×ÅÎØ.
 
 %prep
 %setup -q -n aumix-%{version}
@@ -50,7 +72,9 @@ poziom sygna³u wyj¶ciowego.
 %patch2 -p1
 
 %build
-rm -rf missing
+#rm -f missing acinclude.m4
+rm -f missing
+#%%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -68,11 +92,11 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Multimedia,%{_pixmapsdir}} \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/aumix/*xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia/aumix.desktop
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
+rm -f $RPM_BUILD_ROOT%{_datadir}/aumix/aumix.xpm
 
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
-
-touch $RPM_BUILD_ROOT%{_sysconfdir}/aumixrc
+:> $RPM_BUILD_ROOT%{_sysconfdir}/aumixrc
 
 %find_lang aumix
 
@@ -85,9 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace,missingok) %verify(not size mtime md5) %{_sysconfdir}/aumixrc
 
 %attr(755,root,root) %{_bindir}/aumix
-
-%{_pixmapsdir}/*.xpm
-%{_applnkdir}/Multimedia/aumix.desktop
-
-%{_datadir}/aumix
 %{_mandir}/man1/*
+%{_datadir}/aumix
+
+%{_pixmapsdir}/*.png
+%{_applnkdir}/Multimedia/aumix.desktop
