@@ -1,6 +1,6 @@
 --- aumix-2.1/doc/aumix.1	Mon Jan 31 23:30:12 2000
-+++ aumix-2.1.pius/doc/aumix.1	Fri Feb  4 00:50:48 2000
-@@ -115,7 +115,8 @@
++++ aumix-2.1.pius/doc/aumix.1	Tue Feb  8 02:09:41 2000
+@@ -115,15 +115,19 @@
  go into interactive mode after doing things non-interactively.
  .It Fl L
  load settings from
@@ -11,19 +11,18 @@
 +(depreciated), or
  .Pa /etc/aumixrc
  if the former is inaccessible
-@@ -123,7 +125,10 @@
+ .It Fl q
  query all devices and print their settings
  .It Fl S
  save settings to
--.Pa $HOME/.aumixrc
 +.Pa $CONFIG_DIR/aumixrc
 +or
-+.Pa $HOME/.aumixrc
+ .Pa $HOME/.aumixrc
 +(depreciated)
  .El
  .Sh EXAMPLE
  The command
-@@ -179,7 +184,10 @@
+@@ -179,7 +183,10 @@
  show a description of the functions of keys
  .It L or l
  load settings from
@@ -35,7 +34,7 @@
  falling back to
  .Pa /etc/aumixrc
  .It M or m
-@@ -247,8 +255,11 @@
+@@ -247,8 +254,11 @@
  Saved settings for the mixer are kept in the
  .Pa /etc/aumixrc
  and
@@ -49,8 +48,159 @@
  Color schemes are normally kept in the directory given
  by
  .Ev DATADIRNAME
+--- aumix-2.1/po/aumix.pot	Mon Jan 31 23:30:12 2000
++++ aumix-2.1.pius/po/aumix.pot	Tue Feb  8 02:09:41 2000
+@@ -175,7 +175,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+--- aumix-2.1/po/de.po	Sun Nov 28 07:35:18 1999
++++ aumix-2.1.pius/po/de.po	Tue Feb  8 02:09:41 2000
+@@ -81,7 +81,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -99,7 +99,7 @@
+ "Weitere Optionen:\n"
+ "  d:  Anderes Ger‰t als /dev/mixer benutzen\n"
+ "  f:  spezifizieren Sie Datei f¸r Einsparung- und Ladeneinstellungen\n"
+-"      (R¸ckstellungen zum ~ /.aumixrc or /etc/aumixrc)\n"
++"      (R¸ckstellungen zum $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  h:  Diese n¸tzlichen Informationen\n"
+ 
+ #: src/common.c:567
+--- aumix-2.1/po/es.po	Mon Dec  6 16:41:47 1999
++++ aumix-2.1.pius/po/es.po	Tue Feb  8 02:09:41 2000
+@@ -81,7 +81,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -99,7 +99,7 @@
+ "Otras opciones:\n"
+ "  d:  ajustar dispositivos adem·s de /dev/mixer\n"
+ "  f:  indicar el fichero para guardar y cargar las preferencias (por\n"
+-"      defecto es ~/.aumixrc o /etc/aumixrc\n"
++"      defecto es $CONFIG_DIR/aumixrc, ~/.aumixrc o /etc/aumixrc\n"
+ "  C:  indicar el esquema de color\n"
+ "  h:  este mensaje de ayuda\n"
+ 
+--- aumix-2.1/po/gl.po	Mon Dec  6 16:41:47 1999
++++ aumix-2.1.pius/po/gl.po	Tue Feb  8 02:09:41 2000
+@@ -89,7 +89,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -107,7 +107,7 @@
+ "outras opciÛns:\n"
+ "  d:  axustar outro dispositivo que non sexa /dev/mixer\n"
+ "  f:  especificar ficheiro para gardar e cargar par·metros (por omisiÛn È\n"
+-"      ~/.aumixrc ou /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~/.aumixrc ou /etc/aumixrc)\n"
+ "  C:  especifica-lo esquema de cor\n"
+ "  h:  amosar esta mensaxe de axuda\n"
+ 
+--- aumix-2.1/po/pl.po	Tue Feb  8 02:15:54 2000
++++ aumix-2.1.pius/po/pl.po	Tue Feb  8 02:09:41 2000
+@@ -181,7 +181,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~/.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -199,7 +199,7 @@
+ "inne opcje:\n"
+ "  d:  dostosowuje urz±dzenie inne niø /dev/mixer\n"
+ "  f:  okre∂la plik do zapisywania i ≥adowania ustawieÒ (domy∂lnie jest to\n"
+-"      ~/.aumixrc lub /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~/.aumixrc lub /etc/aumixrc)\n"
+ "  C:  okre∂la plik zawieraj±cy schemat uøycia kolorÛw\n"
+ "  h:  ta pomocna informacja\n"
+ 
+--- aumix-2.1/po/pt_BR.po	Sun Nov 28 07:35:18 1999
++++ aumix-2.1.pius/po/pt_BR.po	Tue Feb  8 02:09:41 2000
+@@ -84,7 +84,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -102,7 +102,7 @@
+ "outras opÁıes:\n"
+ "  d:  usar outro dispositivo que n„o o /dev/mixer\n"
+ "  f:  SPECIFY FILE FOR SAVING AND LOADING SETTINGS (DEFAULTS TO\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  SPECIFY COLOR SCHEME\n"
+ "  h:  esta mensagem de ajuda\n"
+ 
+--- aumix-2.1/po/ru.po	Mon Dec 20 02:13:11 1999
++++ aumix-2.1.pius/po/ru.po	Tue Feb  8 02:09:41 2000
+@@ -188,7 +188,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -207,7 +207,7 @@
+ "‰“’«…≈ œ–√……:\n"
+ "  d:  “≈«’Ã…“œ◊¡‘ÿ ’”‘“œ ”‘◊¡ À“œÕ≈ /dev/mixer\n"
+ "  f:  ’À¡⁄¡Œ…≈ …Õ≈Œ… ∆¡ Ã¡ ƒÃ— »“¡Œ≈Œ…— ’”‘¡Œœ◊œÀ (–œ ’ÕœÃﬁ¡Œ…¿\n"
+-"      ~ /.aumixrc …Ã… /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc …Ã… /etc/aumixrc)\n"
+ "  C:  ◊Ÿ¬œ“ √◊≈‘œ◊œ  ”»≈ÕŸ\n"
+ "  h:  ‹‘¡ –œÕœ›ÿ\n"
+ 
+--- aumix-2.1/po/uk.po	Sun Nov 28 07:35:18 1999
++++ aumix-2.1.pius/po/uk.po	Tue Feb  8 02:09:41 2000
+@@ -82,7 +82,7 @@
+ "other options:\n"
+ "  d:  adjust a device besides /dev/mixer\n"
+ "  f:  specify file for saving and loading settings (defaults to\n"
+-"      ~ /.aumixrc or /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
+ "  C:  specify color scheme\n"
+ "  h:  this helpful message\n"
+ msgstr ""
+@@ -101,7 +101,7 @@
+ "∂Œ€¶ œ–√¶ß:\n"
+ "  d:  “≈«’Ã¿◊¡‘… –“…”‘“œß œÀ“¶Õ /dev/mixer\n"
+ "  f:  ◊À¡⁄¡ŒŒ— ¶Õ≈Œ¶ ∆¡ Ã’ ƒÃ— ⁄¬≈“¶«¡ŒŒ— “¶◊Œ¶◊ (⁄¡ ⁄¡Õœ◊ﬁ¡ŒŒ—Õ\n"
+-"      ~ /.aumixrc ﬁ… /etc/aumixrc)\n"
++"      $CONFIG_DIR/aumixrc, ~ /.aumixrc ﬁ… /etc/aumixrc)\n"
+ "  C:  SPECIFY COLOR SCHEME\n"
+ "  h:  √— ƒœ–œÕœ«¡\n"
+ 
 --- aumix-2.1/src/Makefile.am	Sat Dec 25 17:53:54 1999
-+++ aumix-2.1.pius/src/Makefile.am	Thu Feb  3 16:26:12 2000
++++ aumix-2.1.pius/src/Makefile.am	Tue Feb  8 02:09:41 2000
 @@ -1,8 +1,8 @@
  bin_PROGRAMS	= aumix
  bin_SCRIPTS	= xaumix
@@ -64,7 +214,7 @@
  INCLUDES	= -I../intl -DLOCALEDIR=\"$(localedir)\" -I@includedir@
  CFLAGS		= @CFLAGS@ @GLIB_CFLAGS@ @GTK_CFLAGS@
 --- aumix-2.1/src/Makefile.in	Mon Jan 31 23:19:53 2000
-+++ aumix-2.1.pius/src/Makefile.in	Thu Feb  3 16:25:03 2000
++++ aumix-2.1.pius/src/Makefile.in	Tue Feb  8 02:09:41 2000
 @@ -84,7 +84,7 @@
  
  bin_PROGRAMS = aumix
@@ -84,7 +234,7 @@
  aumix_LDADD = $(LDADD)
  aumix_DEPENDENCIES = 
 --- aumix-2.1/src/common.c	Mon Jan 31 23:30:12 2000
-+++ aumix-2.1.pius/src/common.c	Thu Feb  3 23:51:47 2000
++++ aumix-2.1.pius/src/common.c	Tue Feb  8 02:14:43 2000
 @@ -24,6 +24,7 @@
  #include "gtk.h"
  #endif
@@ -103,8 +253,8 @@
     become an error generator if neither can be opened.
  
     Input:
-@@ -545,19 +547,31 @@
-	FILE           *setfile;
+@@ -551,19 +553,25 @@
+ 	FILE           *setfile;
  	char           *home;
  	char            filename[FILENAME_MAX];
 +	struct cfv     etcfile;
@@ -127,26 +277,20 @@
 +	    etcfile.prefix   = ".";
 +	    etcfile.suffix   = "";
 +	    etcfile.mode     = M_REGULAR_FILE;
-+	    
-+	    if ((usercfv (&etcfile)) == -1)
-+	    	    setfile = notnullfopencfv(&etcfile, mode);
-+	    else
-+		    setfile = fopen(etcfile.result, mode);
++
++    	    setfile = fopencfv(&etcfile, mode);
 +	    	    
 +	    if (setfile == NULL) {
 +		    sprintf(filename, "%s/%s", AUMIXRC_PATH, AUMIXRC);
 +		    setfile = fopen(filename, mode);
 +	        }
-+	    if (setfile == NULL)
-+	 	    return NULL;
-+	    
  	} else
 -		setfile = fopen(save_filename, mode);
 +	    setfile = fopen(save_filename, mode);
  	return setfile;
  }
  
-@@ -649,7 +663,7 @@
+@@ -649,7 +657,7 @@
  other options:\n\
    d:  adjust a device besides /dev/mixer\n\
    f:  specify file for saving and loading settings (defaults to\n\
@@ -156,8 +300,8 @@
    h:  this helpful message\n"));
  #ifdef HAVE_CURSES
 --- aumix-2.1/src/userdir.c	Thu Jan  1 01:00:00 1970
-+++ aumix-2.1.pius/src/userdir.c	Thu Feb  3 01:24:28 2000
-@@ -0,0 +1,146 @@
++++ aumix-2.1.pius/src/userdir.c	Sat Feb  5 21:19:17 2000
+@@ -0,0 +1,167 @@
 +// $Id$
 +#include "userdir.h"
 +    
@@ -205,6 +349,8 @@
 +	return 0;
 +}
 +
++/******************************************************************************/
++
 +int preparemain(struct cfv *CFV) {
 +	char *p;
 +	struct stat st;
@@ -219,6 +365,8 @@
 +	    return (1);
 +	return 0;
 +}
++
++/******************************************************************************/
 +
 +int preparehome(struct cfv *CFV) {
 +	struct stat st;
@@ -236,6 +384,8 @@
 +		return (2);
 +	return (-1);
 +}
++
++/******************************************************************************/
 +
 +int usercfv (struct cfv *CFV) {
 +	int gr;
@@ -258,13 +408,13 @@
 +	
 +/******************************************************************************/
 +
-+/* If directory or file doesn't exist returns the best one wich may be created*/
++/* If directory or file doesn't exist returns the best one wich may be created */
 +int notnullusercfv (struct cfv *CFV) {
 +	int gr;
 +	if ((usercfv(CFV)) == -1) {
 +	    gr = detectcfv(CFV);
-+	    if (gr) return gr;
-+	    /* get environment variable */
++	    if (gr) return gr;	/* remember, it works for errors! */
++	    /* get the environment variable */
 +	    gr = getusercfv (CFV->variable, 
 +			    CFV->home_dir, 
 +			    CFV->result,
@@ -283,7 +433,7 @@
 +    
 +/******************************************************************************/
 +
-+FILE *fopencfv (struct cfv *CFV, const char *mode)
++FILE *maynullfopencfv (struct cfv *CFV, const char *mode)
 +    {
 +    FILE *cfvfile = NULL;
 +    
@@ -303,10 +453,26 @@
 +    cfvfile = fopen (CFV->result, mode);
 +    return (cfvfile);
 +    }
++
++/******************************************************************************/
 +    
++FILE *fopencfv (struct cfv *CFV, const char *mode)
++    {
++    FILE *cfvfile = NULL;
++
++    if (cfvfile == NULL && (strpbrk(mode, "wa")) != NULL) /* create in best location */
++	cfvfile = notnullfopencfv (CFV, mode);
++    else 
++	cfvfile = maynullfopencfv (CFV, mode);
++    
++    return (cfvfile);
++    }
++
++/******************************************************************************/
+\ No newline at end of file
 --- aumix-2.1/src/userdir.h	Thu Jan  1 01:00:00 1970
-+++ aumix-2.1.pius/src/userdir.h	Thu Feb  3 01:58:57 2000
-@@ -0,0 +1,55 @@
++++ aumix-2.1.pius/src/userdir.h	Sat Feb  5 21:19:17 2000
+@@ -0,0 +1,56 @@
 +// $Id$
 +#ifndef USERDIR__H
 +#define USERDIR__H
@@ -359,157 +525,7 @@
 +int notnullusercfv (struct cfv *CFV);
 +
 +FILE *fopencfv (struct cfv *CFV, const char *mode);
++FILE *maynullfopencfv (struct cfv *CFV, const char *mode);
 +FILE *notnullfopencfv (struct cfv *CFV, const char *mode);
 +
 +#endif
---- aumix-2.1/po/aumix.pot	Mon Jan 31 23:30:12 2000
-+++ aumix-2.1.pius/po/aumix.pot	Fri Feb  4 01:11:42 2000
-@@ -175,7 +175,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
---- aumix-2.1/po/de.po	Sun Nov 28 07:35:18 1999
-+++ aumix-2.1.pius/po/de.po	Fri Feb  4 01:10:08 2000
-@@ -81,7 +81,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -99,7 +99,7 @@
- "Weitere Optionen:\n"
- "  d:  Anderes Ger‰t als /dev/mixer benutzen\n"
- "  f:  spezifizieren Sie Datei f¸r Einsparung- und Ladeneinstellungen\n"
--"      (R¸ckstellungen zum ~ /.aumixrc or /etc/aumixrc)\n"
-+"      (R¸ckstellungen zum $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  h:  Diese n¸tzlichen Informationen\n"
- 
- #: src/common.c:567
---- aumix-2.1/po/es.po	Mon Dec  6 16:41:47 1999
-+++ aumix-2.1.pius/po/es.po	Fri Feb  4 01:10:21 2000
-@@ -81,7 +81,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -99,7 +99,7 @@
- "Otras opciones:\n"
- "  d:  ajustar dispositivos adem·s de /dev/mixer\n"
- "  f:  indicar el fichero para guardar y cargar las preferencias (por\n"
--"      defecto es ~/.aumixrc o /etc/aumixrc\n"
-+"      defecto es $CONFIG_DIR/aumixrc, ~/.aumixrc o /etc/aumixrc\n"
- "  C:  indicar el esquema de color\n"
- "  h:  este mensaje de ayuda\n"
- 
---- aumix-2.1/po/gl.po	Mon Dec  6 16:41:47 1999
-+++ aumix-2.1.pius/po/gl.po	Fri Feb  4 01:10:34 2000
-@@ -89,7 +89,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -107,7 +107,7 @@
- "outras opciÛns:\n"
- "  d:  axustar outro dispositivo que non sexa /dev/mixer\n"
- "  f:  especificar ficheiro para gardar e cargar par·metros (por omisiÛn È\n"
--"      ~/.aumixrc ou /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~/.aumixrc ou /etc/aumixrc)\n"
- "  C:  especifica-lo esquema de cor\n"
- "  h:  amosar esta mensaxe de axuda\n"
- 
---- aumix-2.1/po/pl.po	Mon Dec 20 02:13:11 1999
-+++ aumix-2.1.pius/po/pl.po	Fri Feb  4 01:10:50 2000
-@@ -181,7 +181,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~/.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~/.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -199,7 +199,7 @@
- "inne opcje:\n"
- "  d:  dostosowuje urz±dzenie inne niø /dev/mixer\n"
- "  f:  okre∂la plik do zapisywania i ≥adowania ustawieÒ (domy∂lnie jest to\n"
--"      ~/.aumixrc lub /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~/.aumixrc lub /etc/aumixrc)\n"
- "  C:  okre∂la plik zawieraj±cy schemat uøycia kolorÛw\n"
- "  h:  ta pomocna informacja\n"
- 
---- aumix-2.1/po/pt_BR.po	Sun Nov 28 07:35:18 1999
-+++ aumix-2.1.pius/po/pt_BR.po	Fri Feb  4 01:11:01 2000
-@@ -84,7 +84,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -102,7 +102,7 @@
- "outras opÁıes:\n"
- "  d:  usar outro dispositivo que n„o o /dev/mixer\n"
- "  f:  SPECIFY FILE FOR SAVING AND LOADING SETTINGS (DEFAULTS TO\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  SPECIFY COLOR SCHEME\n"
- "  h:  esta mensagem de ajuda\n"
- 
---- aumix-2.1/po/ru.po	Mon Dec 20 02:13:11 1999
-+++ aumix-2.1.pius/po/ru.po	Fri Feb  4 01:11:14 2000
-@@ -188,7 +188,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -207,7 +207,7 @@
- "‰“’«…≈ œ–√……:\n"
- "  d:  “≈«’Ã…“œ◊¡‘ÿ ’”‘“œ ”‘◊¡ À“œÕ≈ /dev/mixer\n"
- "  f:  ’À¡⁄¡Œ…≈ …Õ≈Œ… ∆¡ Ã¡ ƒÃ— »“¡Œ≈Œ…— ’”‘¡Œœ◊œÀ (–œ ’ÕœÃﬁ¡Œ…¿\n"
--"      ~ /.aumixrc …Ã… /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc …Ã… /etc/aumixrc)\n"
- "  C:  ◊Ÿ¬œ“ √◊≈‘œ◊œ  ”»≈ÕŸ\n"
- "  h:  ‹‘¡ –œÕœ›ÿ\n"
- 
---- aumix-2.1/po/uk.po	Sun Nov 28 07:35:18 1999
-+++ aumix-2.1.pius/po/uk.po	Fri Feb  4 01:11:26 2000
-@@ -82,7 +82,7 @@
- "other options:\n"
- "  d:  adjust a device besides /dev/mixer\n"
- "  f:  specify file for saving and loading settings (defaults to\n"
--"      ~ /.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc or /etc/aumixrc)\n"
- "  C:  specify color scheme\n"
- "  h:  this helpful message\n"
- msgstr ""
-@@ -101,7 +101,7 @@
- "∂Œ€¶ œ–√¶ß:\n"
- "  d:  “≈«’Ã¿◊¡‘… –“…”‘“œß œÀ“¶Õ /dev/mixer\n"
- "  f:  ◊À¡⁄¡ŒŒ— ¶Õ≈Œ¶ ∆¡ Ã’ ƒÃ— ⁄¬≈“¶«¡ŒŒ— “¶◊Œ¶◊ (⁄¡ ⁄¡Õœ◊ﬁ¡ŒŒ—Õ\n"
--"      ~ /.aumixrc ﬁ… /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc, ~ /.aumixrc ﬁ… /etc/aumixrc)\n"
- "  C:  SPECIFY COLOR SCHEME\n"
- "  h:  √— ƒœ–œÕœ«¡\n"
- 
