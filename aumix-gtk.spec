@@ -68,7 +68,7 @@ poziom sygna³u wyj¶ciowego.
 %setup -q -n aumix-%{version}
 #%patch0 -p1
 #%patch1 -p1
-#%patch2 -p1
+%patch2 -p1
 
 %build
 #rm -f missing acinclude.m4
@@ -79,7 +79,8 @@ rm -f missing
 %{__automake}
 
 CPPFLAGS="-I/usr/include/ncurses"
-%configure
+%configure \
+	--without-gtk1
 
 %{__make}
 
