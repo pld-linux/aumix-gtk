@@ -4,7 +4,7 @@ Summary(de):	Audio-Mixer auf curses- und X11/Gtk-Basis
 Summary(pl):	Mikser audio bazuj±cy na curses i Gtk+
 Name:		aumix-gtk
 Version:	2.7
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.gz
@@ -50,13 +50,12 @@ poziom sygna³u wyj¶ciowego.
 %patch2 -p1
 
 %build
-rm -rf missing acinclude.m4
-%{__gettextize}
+rm -rf missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
 
-CPPFLAGS="-I/usr/include/ncurses" \
+CPPFLAGS="-I/usr/include/ncurses"
 %configure
 
 %{__make}
