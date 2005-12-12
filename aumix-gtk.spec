@@ -44,9 +44,9 @@ output volume.
 
 %description -l de
 Dieses Programm bietet eine interaktive Methode auf tty- und
-X11/GTK+-Basis zur Steuerung eines Soundkarten-Mixers. Sie können damit
-die Eingangspegel der CD, des Mikrophons und von Synthesizer-Karten
-sowie auch die Ausgabelautstärke regeln.
+X11/GTK+-Basis zur Steuerung eines Soundkarten-Mixers. Sie können
+damit die Eingangspegel der CD, des Mikrophons und von
+Synthesizer-Karten sowie auch die Ausgabelautstärke regeln.
 
 %description -l es
 Este programa nos ofrece un método interactivo basado en tty y
@@ -55,10 +55,10 @@ ajuste los niveles de entrada del CD, micrófono, y sintetizadores, así
 como el volumen de salida.
 
 %description -l pl
-Ten program przynosi bazuj±c± na tty oraz X11/GTK+, interaktywn± metodê
-kontrolowania miksera karty d¼wiêkowej. aumix pozwala zmieniaæ poziom
-sygna³u nadchodz±cego z CD, mikrofonu i syntetyzerów tak samo jak
-poziom sygna³u wyj¶ciowego.
+Ten program przynosi bazuj±c± na tty oraz X11/GTK+, interaktywn±
+metodê kontrolowania miksera karty d¼wiêkowej. aumix pozwala zmieniaæ
+poziom sygna³u nadchodz±cego z CD, mikrofonu i syntetyzerów tak samo
+jak poziom sygna³u wyj¶ciowego.
 
 %description -l ru
 üÔÁ ĞÒÏÇÒÁÍÍÁ - ËÏÎÓÏÌØÎÙÊ É X11/GTK+, ÉÎÔÅÒÁËÔÉ×ÎÙÊ ÒÅÇÕÌÑÔÏÒ ÕÒÏ×ÎÅÊ
@@ -117,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f aumix.lang
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog NEWS README TODO
-%config(noreplace,missingok) %verify(not size mtime md5) %{_sysconfdir}/aumixrc
+%config(noreplace,missingok) %verify(not md5 mtime size) %{_sysconfdir}/aumixrc
 
 %attr(755,root,root) %{_bindir}/aumix
 %{_mandir}/man1/*
