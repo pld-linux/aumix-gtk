@@ -4,11 +4,11 @@
 %bcond_with	gtk1	# build with GTK+ instead of GTK+2
 #
 Summary:	curses and X11/GTK+ based audio mixer
-Summary(de.UTF-8):   Audio-Mixer auf curses- und X11/GTK+-Basis
-Summary(es.UTF-8):   Mezclador de audio basado en curses y X11/GTK+
-Summary(pl.UTF-8):   Mikser audio bazujący na curses i GTK+
-Summary(ru.UTF-8):   Аудио микшер на базе библиотеки curses и GTK+
-Summary(uk.UTF-8):   Аудіо мікшер, базований на біблиотеці curses і GTK+
+Summary(de.UTF-8):	Audio-Mixer auf curses- und X11/GTK+-Basis
+Summary(es.UTF-8):	Mezclador de audio basado en curses y X11/GTK+
+Summary(pl.UTF-8):	Mikser audio bazujący na curses i GTK+
+Summary(ru.UTF-8):	Аудио микшер на базе библиотеки curses и GTK+
+Summary(uk.UTF-8):	Аудіо мікшер, базований на біблиотеці curses і GTK+
 Name:		aumix-gtk
 Version:	2.8
 Release:	2
