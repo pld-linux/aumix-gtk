@@ -4,11 +4,11 @@
 %bcond_with	gtk1	# build with GTK+ instead of GTK+2
 #
 Summary:	curses and X11/GTK+ based audio mixer
-Summary(de):	Audio-Mixer auf curses- und X11/GTK+-Basis
-Summary(es):	Mezclador de audio basado en curses y X11/GTK+
-Summary(pl):	Mikser audio bazuj╠cy na curses i GTK+
-Summary(ru):	Аудио микшер на базе библиотеки curses и GTK+
-Summary(uk):	Ауд╕о м╕кшер, базований на б╕блиотец╕ curses ╕ GTK+
+Summary(de.UTF-8):   Audio-Mixer auf curses- und X11/GTK+-Basis
+Summary(es.UTF-8):   Mezclador de audio basado en curses y X11/GTK+
+Summary(pl.UTF-8):   Mikser audio bazujд┘cy na curses i GTK+
+Summary(ru.UTF-8):   п░я┐п╢п╦п╬ п╪п╦п╨я┬п╣я─ п╫п╟ п╠п╟п╥п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ curses п╦ GTK+
+Summary(uk.UTF-8):   п░я┐п╢я√п╬ п╪я√п╨я┬п╣я─, п╠п╟п╥п╬п╡п╟п╫п╦п╧ п╫п╟ п╠я√п╠п╩п╦п╬я┌п╣я├я√ curses я√ GTK+
 Name:		aumix-gtk
 Version:	2.8
 Release:	2
@@ -42,35 +42,35 @@ controlling a sound card's mixer. It lets you adjust the input levels
 from the CD, microphone, and onboard synthesizers as well as the
 output volume.
 
-%description -l de
+%description -l de.UTF-8
 Dieses Programm bietet eine interaktive Methode auf tty- und
-X11/GTK+-Basis zur Steuerung eines Soundkarten-Mixers. Sie kЖnnen
+X11/GTK+-Basis zur Steuerung eines Soundkarten-Mixers. Sie kц╤nnen
 damit die Eingangspegel der CD, des Mikrophons und von
-Synthesizer-Karten sowie auch die AusgabelautstДrke regeln.
+Synthesizer-Karten sowie auch die Ausgabelautstц╓rke regeln.
 
-%description -l es
-Este programa nos ofrece un mИtodo interactivo basado en tty y
+%description -l es.UTF-8
+Este programa nos ofrece un mц╘todo interactivo basado en tty y
 X11/GTK+ de control de mezclas de tarjetas de sonido. Deja que se
-ajuste los niveles de entrada del CD, micrСfono, y sintetizadores, asМ
+ajuste los niveles de entrada del CD, micrцЁfono, y sintetizadores, asц╜
 como el volumen de salida.
 
-%description -l pl
-Ten program przynosi bazuj╠c╠ na tty oraz X11/GTK+, interaktywn╠
-metodЙ kontrolowania miksera karty d╪wiЙkowej. aumix pozwala zmieniaФ
-poziom sygnaЁu nadchodz╠cego z CD, mikrofonu i syntetyzerСw tak samo
-jak poziom sygnaЁu wyj╤ciowego.
+%description -l pl.UTF-8
+Ten program przynosi bazujд┘cд┘ na tty oraz X11/GTK+, interaktywnд┘
+metodд≥ kontrolowania miksera karty dе╨wiд≥kowej. aumix pozwala zmieniaд┤
+poziom sygnaе┌u nadchodzд┘cego z CD, mikrofonu i syntetyzerцЁw tak samo
+jak poziom sygnaе┌u wyjе⌡ciowego.
 
-%description -l ru
-Эта программа - консольный и X11/GTK+, интерактивный регулятор уровней
-микшера звуковой карты. Она позволяет изменять как входные уровни
-сигналов с CD, микрофона, синтезаторов на звуковой плате, так и
-выходной уровень.
+%description -l ru.UTF-8
+п╜я┌п╟ п©я─п╬пЁя─п╟п╪п╪п╟ - п╨п╬п╫я│п╬п╩я▄п╫я▀п╧ п╦ X11/GTK+, п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫я▀п╧ я─п╣пЁя┐п╩я▐я┌п╬я─ я┐я─п╬п╡п╫п╣п╧
+п╪п╦п╨я┬п╣я─п╟ п╥п╡я┐п╨п╬п╡п╬п╧ п╨п╟я─я┌я▀. п·п╫п╟ п©п╬п╥п╡п╬п╩я▐п╣я┌ п╦п╥п╪п╣п╫я▐я┌я▄ п╨п╟п╨ п╡я┘п╬п╢п╫я▀п╣ я┐я─п╬п╡п╫п╦
+я│п╦пЁп╫п╟п╩п╬п╡ я│ CD, п╪п╦п╨я─п╬я└п╬п╫п╟, я│п╦п╫я┌п╣п╥п╟я┌п╬я─п╬п╡ п╫п╟ п╥п╡я┐п╨п╬п╡п╬п╧ п©п╩п╟я┌п╣, я┌п╟п╨ п╦
+п╡я▀я┘п╬п╢п╫п╬п╧ я┐я─п╬п╡п╣п╫я▄.
 
-%description -l uk
-Ця програма - консольний ╕ X11/GTK+, ╕нтерактивний регулятор р╕вней
-м╕кшеру звуково╖ картки. Вона дозволя╓ зм╕нювати як вх╕дн╕ р╕вн╕
-сигнал╕в з CD, м╕крофону, синтезатор╕в на звуков╕й плат╕, так ╕
-вих╕дний р╕вень.
+%description -l uk.UTF-8
+п╕я▐ п©я─п╬пЁя─п╟п╪п╟ - п╨п╬п╫я│п╬п╩я▄п╫п╦п╧ я√ X11/GTK+, я√п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╦п╧ я─п╣пЁя┐п╩я▐я┌п╬я─ я─я√п╡п╫п╣п╧
+п╪я√п╨я┬п╣я─я┐ п╥п╡я┐п╨п╬п╡п╬я≈ п╨п╟я─я┌п╨п╦. п▓п╬п╫п╟ п╢п╬п╥п╡п╬п╩я▐я■ п╥п╪я√п╫я▌п╡п╟я┌п╦ я▐п╨ п╡я┘я√п╢п╫я√ я─я√п╡п╫я√
+я│п╦пЁп╫п╟п╩я√п╡ п╥ CD, п╪я√п╨я─п╬я└п╬п╫я┐, я│п╦п╫я┌п╣п╥п╟я┌п╬я─я√п╡ п╫п╟ п╥п╡я┐п╨п╬п╡я√п╧ п©п╩п╟я┌я√, я┌п╟п╨ я√
+п╡п╦я┘я√п╢п╫п╦п╧ я─я√п╡п╣п╫я▄.
 
 %prep
 %setup -q -n aumix-%{version}
