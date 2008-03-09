@@ -12,7 +12,7 @@ Summary(uk.UTF-8):	Аудіо мікшер, базований на біблио
 Name:		aumix-gtk
 Version:	2.8
 Release:	2
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.bz2
 # Source0-md5:	dc3fc7209752207c23e7c94ab886b340
