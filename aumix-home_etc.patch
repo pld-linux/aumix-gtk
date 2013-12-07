@@ -151,12 +151,12 @@ diff -Nru aumix-2.6.1/po/pt_BR.po aumix-2.6.1.new/po/pt_BR.po
  "  h:  this helpful message\n"
  msgstr ""
  "  d:  ajusta um dispositivo em /dev/mixer\n"
- "  f:  especifica um arquivo para ler e gravar as configurações (o padrão é   "
--"    ~/.aumixrc or /etc/aumixrc)\n"
-+"      $CONFIG_DIR/aumixrc or /etc/aumixrc)\n"
+ "  f:  especifica um arquivo para ler e gravar as configurações (o padrão "
+-"é       ~/.aumixrc or /etc/aumixrc)\n"
++"é       $CONFIG_DIR/.aumixrc or /etc/aumixrc)\n"
  "  h:  essa mensagem de ajuda\n"
  
- #: src/common.c:707
+ #: src/common.c:716
 diff -Nru aumix-2.6.1/po/ru.po aumix-2.6.1.new/po/ru.po
 --- aumix-2.6.1/po/ru.po	Tue Jun 27 23:11:47 2000
 +++ aumix-2.6.1.new/po/ru.po	Tue Jun 27 23:16:07 2000
@@ -207,18 +207,6 @@ diff -Nru aumix-2.6.1/src/Makefile.am aumix-2.6.1.new/src/Makefile.am
  		mouse.h play.xpm record.xpm
  localedir	= $(datadir)/locale
  INCLUDES	= -I../intl -DLOCALEDIR=\"$(localedir)\" -I@includedir@
-diff -Nru aumix-2.6.1/src/Makefile.in aumix-2.6.1.new/src/Makefile.in
---- aumix-2.6.1/src/Makefile.in	Tue Jun 27 23:11:47 2000
-+++ aumix-2.6.1.new/src/Makefile.in	Tue Jun 27 23:11:28 2000
-@@ -100,7 +100,7 @@
- 
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--aumix_OBJECTS =  common.o curses.o dummy.o gpm-xterm.o gtk.o \
-+aumix_OBJECTS =  userdir.o common.o curses.o dummy.o gpm-xterm.o gtk.o \
- interactive.o mouse.o
- aumix_LDADD = $(LDADD)
- aumix_DEPENDENCIES = 
 diff -Nru aumix-2.6.1/src/common.c aumix-2.6.1.new/src/common.c
 --- aumix-2.6.1/src/common.c	Tue Jun 27 23:11:47 2000
 +++ aumix-2.6.1.new/src/common.c	Wed Jun 28 00:10:45 2000

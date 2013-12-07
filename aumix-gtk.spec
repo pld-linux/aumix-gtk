@@ -10,17 +10,16 @@ Summary(pl.UTF-8):	Mikser audio bazujący na curses i GTK+
 Summary(ru.UTF-8):	Аудио микшер на базе библиотеки curses и GTK+
 Summary(uk.UTF-8):	Аудіо мікшер, базований на біблиотеці curses і GTK+
 Name:		aumix-gtk
-Version:	2.8
-Release:	2
+Version:	2.9.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
-Source0:	http://www.jpj.net/~trevor/aumix/aumix-%{version}.tar.bz2
-# Source0-md5:	dc3fc7209752207c23e7c94ab886b340
+Source0:	http://www.jpj.net/~trevor/aumix/releases/aumix-%{version}.tar.bz2
+# Source0-md5:	34f28ae1c94fc5298e8bb2688c4b3a20
 Source3:	%{name}.desktop
 Source4:	aumix.png
 Patch0:		aumix-home_etc.patch
 Patch1:		aumix-xaumix.patch
-Patch2:		aumix-ac250.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -76,10 +75,9 @@ jak poziom sygnału wyjściowego.
 %setup -q -n aumix-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
-#%%{__gettextize}
+%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
