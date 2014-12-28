@@ -23,7 +23,7 @@ Patch1:		aumix-xaumix.patch
 URL:		http://www.jpj.net/~trevor/aumix.html
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gpm-devel
 %if %{with gtk1}
 BuildRequires:	gtk+-devel >= 1.2.0
